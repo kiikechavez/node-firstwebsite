@@ -1,0 +1,447 @@
+* {
+  box-sizing: border-box; /* Para que ocupen tanto el espaceado interno y externo sumen un solo espaceado */
+  margin: 0; /* Para que no haya márgenes hacia afuera*/
+  padding: 0; /* Para que no hayan espaceados hacia adentro, margin 0 y padding 0 y padding 0, quitan el espaceado por defecto que trae el navegador*/
+}
+
+body {
+  background: #000000;
+  color: #fff;
+  background-color: #000000;
+  background-color: #000000;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='105' viewBox='0 0 80 105'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='death-star' fill='%234c4d47' fill-opacity='0.2'%3E%3Cpath d='M20 10a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm15 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zM20 75a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zm30-65a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm0 65a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zM35 10a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zM5 45a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zm60 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  font-size: 16px;
+  font-family: "Oswald", sans-serif;
+}
+
+header {
+  width: 100%;
+  overflow: hidden; /* importante porque le pondré unos floats e impedimos que haya un error*/
+  background: rgba(0, 0, 0, 0.658);
+  margin-bottom: 20px;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto; /* Lo centramos */
+  overflow: hidden;
+}
+
+header .logo {
+  float: left;
+  line-height: 100px;
+}
+
+header nav {
+  float: right;
+  line-height: 100px;
+}
+
+header nav a {
+  display: inline-block; /* para que uno esté al lado del otro y podamos modificar su modelo de caja*/
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px; /* 10px arriba y abajo y 20px hacia los lados*/
+  line-height: normal; /*para que no le afecte el line-height del nav*/
+  margin-top: 40px;
+  font-weight: bold;
+  -webkit-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+header nav a:hover {
+  background: #dac5bc;
+  border-radius: 50px;
+}
+
+.header2 {
+  width: 85%;
+  position: fixed;
+  height: 120px;
+}
+
+.header2 .logo {
+  line-height: 100px;
+  font-size: 30px;
+}
+
+.header2 nav {
+  line-height: 100px;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+/* Navigation */
+
+.nav-main {
+  font-size: 10px;
+  display: flex; /*Me va a permitir organizar los elementos*/
+  justify-content: space-between; /* van a estar utilizando todo el ancho disponible*/
+  align-items: center;
+  height: 120px; /* altura por defecto de la navegación */
+  padding: 0px 20;
+  /*background-color: #225094*/
+  background: rgba(0, 0, 0, 0.658);
+  /* 
+    position: fixed;
+    top: 0;
+    width:90%; */
+}
+
+.nav-brand {
+  width: auto;
+  height: 120px;
+  margin-top: auto;
+  margin-left: 10px;
+}
+
+/*Nav Left*/
+
+.nav-main ul {
+  display: flex; /*para ponerlo uno al lado del otro*/
+}
+.nav-main ul li {
+  padding: 0 5px;
+  font-size: 15px;
+  margin: 0 auto;
+  margin-left: 10px;
+}
+
+/* .nav-main ul li a {
+    padding: 1px;
+} */
+
+.nav-main ul li a:hover {
+  border-bottom: none; /* 2px solid #ffffff agregarle subrayado a los enlaces de la navegación*/
+}
+
+.nav-main ul.nav-menu {
+  flex: 1;
+  margin-left: 350px;
+}
+
+.menu-btn {
+  position: absolute;
+  cursor: pointer; /*Para que aparezca el cursor (simule ser un botón)*/
+  top: 38px; /*desde arriba*/
+  right: 40px;
+  z-index: 2; /* para asegurarme de que siempre esté arriba*/
+  font-size: 1.8rem; /* tamaño del ícono*/
+  /*display: none; para que al inicio se coloque como un display none*/
+  display: none;
+}
+
+/* Showcase */
+
+hr {
+  margin: 10px 0;
+}
+
+.showcase {
+  width: 100%;
+  height: 550px;
+  background: url(/img/smg2.jpg) no-repeat center center/cover;
+  padding: 50px; /* para los elementos que después se coloquen debajo.*/
+  margin-bottom: 25px; /* para separar del otro div*/
+  display: flex; /* para centrar el texto que tenemos dentro*/
+  flex-direction: column; /*para que el texto lo pongamos debajo y esté centrado*/
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.btn {
+  cursor: pointer; /* para que aparezca el ícono ak posicionar el cursor*/
+  display: inline-block;
+  border: 0;
+  font-weight: bold;
+  padding: 10px 20px; /*10px arriba y abajo y 20px hacia los lados*/
+  background: #262626;
+  color: #fff;
+  font-size: 15px;
+  border: 1px solid #ffffff;
+  margin: 10px 0;
+}
+
+.btn:hover {
+  opacity: 0.7; /* para ponerle opacidad al momento de seleccionar el boton */
+}
+
+.showcase h2,
+.showcase p {
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-shadow: 2px 0 0 #000000, -2px 0 0 #000000, 0 2px 0 #000000,
+    0 -2px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000,
+    -1px 1px 0 #000000;
+}
+
+.showcase h1 {
+  font-size: 40px;
+}
+.showcase h2 {
+  font-size: 30px;
+}
+
+/* Modules */
+
+.modules {
+  display: grid; /* utilizar las grillas de css */
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* Una forma de ponerlo es: repeat(4, 1fr); Me va a permitir poder crear columnas*/
+  gap: 25px; /* Espaciado entre cada columna*/
+  margin: 10px 0; /* De esta manera separo las otras imágenes que van debajo*/
+}
+
+.modules img {
+  width: 100%;
+  height: 180px;
+}
+
+.modules h3 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.modules a {
+  padding: 10px 0;
+  color: #f2f2f2;
+  text-transform: uppercase; /* para que esté en mayúscula*/
+  display: inline-block;
+  font-weight: bold;
+}
+
+.modules a:hover {
+  text-decoration: underline;
+}
+
+.sliders img {
+  align-items: center;
+  margin-left: 28%;
+}
+
+.banner {
+  width: 100%;
+  height: 350px;
+  background: url("/img/imagen1.jpg") no-repeat center center/cover;
+  margin-bottom: 30px; /* Espacio hacia abajo*/
+  margin-top: 10px;
+}
+
+.banner .content2 {
+  background: rgba(0, 0, 0, 0.4);
+  width: 40%;
+  height: 350px;
+  padding: 90px 0 0 30px;
+  color: #ffffff;
+}
+
+.banner p,
+.banner h2 {
+  margin: 10px 0 20px 0;
+}
+
+/*Social*/
+
+.social {
+  margin: 50px;
+}
+.social p {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px; /* para que se haga una especie de título encima de los íconos*/
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#facebook:hover {
+  color: #3b5998;
+}
+#whatsapp:hover {
+  color: #25d366;
+}
+#instagram:hover {
+  color: #c13584;
+}
+
+.links a {
+  margin: 0 30px;
+}
+
+.links a i {
+  font-size: 3rem;
+}
+
+/* Footer links */
+
+.footer-links {
+  background: #2f3640;
+  color: #757575;
+  font-size: 12px;
+  padding: 35px 0;
+}
+
+.footer-links a:hover {
+  color: rgb(64, 64, 240);
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px; /* Espaceado entre las columnas de 10px */
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.footer-container ul {
+  margin: 0 auto; /* Para que las columnas estén centradas*/
+}
+
+.footer-container ul li {
+  line-height: 2.8; /* Crear espaceado entre los links del li */
+  font-size: 15px;
+}
+
+.footer {
+  background: #2f3640;
+  color: #757575;
+  font-size: 13px;
+  padding: 10px 0;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.link {
+  text-decoration: none;
+  text-decoration-line: none;
+  text-decoration-thickness: initial;
+  text-decoration-style: initial;
+  text-decoration-color: initial;
+}
+.link:hover {
+  color: rgb(243, 243, 243);
+}
+.color-inherit {
+  color: inherit;
+}
+
+.link:link,
+.link:visited {
+  transition: all 0.1s ease-in;
+  transition-property: all;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+  transition-delay: 0s;
+}
+
+.lh-copy {
+  line-height: 1.5;
+}
+a {
+  background-color: transparent;
+}
+a:-webkit-any-link {
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 1057px) {
+  header .logo,
+  header nav {
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+    align-items: center;
+  }
+
+  .header2 {
+    height: auto;
+  }
+
+  .header2 .logo,
+  .header2 nav {
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-main ul.nav-menu {
+    display: block;
+    position: absolute; /*Para que esté encima de todo */
+    top: 0; /*Para que esté en la esquina */
+    left: 0; /*Para que esté en la izquierda*/
+    background: #2f3640;
+    height: 100%;
+    padding: 30px;
+    opacity: 0.9;
+    transform: translateX(-800px);
+    transition: transform 0.5s ease-in-out; /*El transition es para añadir un efecto, para que cuando aparezca el menú se va a deslizar*/
+  }
+
+  .nav-main ul.nav-menu.show {
+    /* cuando se le agregue la clase show  */
+    transform: translateX(-350px);
+  }
+
+  .nav-main ul.nav-menu li {
+    padding: 20px;
+    border-bottom: #ccc solid 1px; /*líneas que separan las letras */
+    font-size: 14px;
+  }
+
+  .nav-main ul.nav-menu-right {
+    margin-right: 40px; /*Margen hacia la derecha*/
+  }
+
+  .modules {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .banner .content2 {
+    width: 80%;
+  }
+  .footer-links .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .modules img {
+    width: 100%;
+    height: 270px;
+  }
+  .modules {
+    grid-template-columns: 1fr;
+  }
+  .banner .content2 {
+    width: 100%;
+    padding: 60px 20px;
+  }
+  .footer-links .footer-container {
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+}

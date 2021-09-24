@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%=title %>
+    </title>
+
+    <%- include ('partials/head.html') %>
+
+</head>
+
+<body>
+
+    <div class="menu-btn">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="container p-0">
+        
+        <%- include('partials/navigation.html') %>
+
+            <!-- Showcase -->
+            <section class="showcase">
+                <h2>Asesorías</h2>
+                <p>Desarrolle nuevos emprendimientos en finanzas.</p>
+                <a href="#" class="btn">Leer más <i class="fas fa-angle-double-right"></i></a>
+            </section>
+            <!-- Aquí por si quiero poner un banner  -->
+            <section class="banner">
+                <div class="content2">
+                    <h2>Safe Money Group</h2>
+                    <p>El poder de la era digital</p>
+                    <a href="#" class="btn">Leer más <i class="fas fa-angle-double-right"></i></a>
+                </div>
+            </section>
+            <!-- Silders hace parte del script -->
+            <section class="sliders">
+                <div class="content">
+                    <img name="slider">
+                </div>
+            </section>
+
+            <%- include ('partials/social.html') %>
+    </div>
+
+    <%- include('partials/footer.html') %>
+
+    <%- include('partials/scripts.html') %>
+
+        <script>
+            window.addEventListener('load', function () { /*Una vez que la página cargue ejecute esta función*/
+                console.log('El contenido ha cargado')
+
+                var imagenes = [];
+                var time = 4000;
+
+                imagenes[0] = 'img/slider1.png';
+                imagenes[1] = 'img/slider2.png';
+                imagenes[2] = 'img/slider3.png';
+
+                var IndiceImagenes = 0;
+
+                function cambiarImagenes() {
+
+                    document.slider.src = imagenes[IndiceImagenes];
+
+                    if (IndiceImagenes < 2) {
+                        IndiceImagenes++;
+                    } else {
+                        IndiceImagenes = 0;
+                    }
+                }
+
+                setInterval(cambiarImagenes, time);
+            });
+        </script>
+</body>
+
+</html>
